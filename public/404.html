@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA redirect: encode the path into the query string and redirect to index.html
+      var path = window.location.pathname.replace(/^\/tech-canvas-project/, '') || '/';
+      var search = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace(
+        '/tech-canvas-project/?p=' + encodeURIComponent(path + search) + (hash || '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
