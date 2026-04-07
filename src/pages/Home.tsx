@@ -9,32 +9,32 @@ import { ArrowRight } from "lucide-react";
 
 const featuredProjects = [
   {
-    name: "Scalable Fintech Platform",
-    slug: "scalable-fintech-platform",
-    description: "Development of a scalable financial platform handling millions of transactions with real-time processing and robust security measures.",
-    stack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    impact: "35% latency reduction, millions of users supported",
+    name: "GenAI LLM Platform — Multi-Agent System",
+    slug: "genai-llm-platform",
+    description: "Migrated a multi-agent platform from AWS EKS to GCP, deploying LiteLLM proxy on GKE with Vertex AI model orchestration and GitOps-driven deployments.",
+    stack: ["GCP", "GKE", "LiteLLM", "Vertex AI", "ArgoCD"],
+    impact: "Full cloud portability proven in ~2 weeks",
   },
   {
-    name: "Internal Design System",
-    slug: "internal-design-system",
-    description: "Creation of a robust design system enabling multiple teams to build consistent, accessible interfaces at scale.",
-    stack: ["React", "Storybook", "CSS-in-JS"],
-    impact: "40% increase in team productivity",
+    name: "GenAI Enterprise Apps — Real Estate",
+    slug: "genai-enterprise-apps",
+    description: "Lead architect for AI-powered Vendor Assessment and Memo Creation applications, reducing vendor evaluation turnaround from ~1 week to hours.",
+    stack: ["Azure", "Cosmos DB", "Azure OpenAI", "Power Automate"],
+    impact: "Vendor evaluation reduced from ~1 week to hours",
   },
   {
-    name: "Real-Time Analytics Dashboard",
-    slug: "real-time-analytics-dashboard",
-    description: "Real-time dashboard for instant decision-making with live data visualization and customizable metrics.",
-    stack: ["Next.js", "WebSockets", "D3.js"],
-    impact: "Instant insights for product and business teams",
+    name: "Regulatory Data Lake & ETL Platform",
+    slug: "regulatory-data-lake",
+    description: "Partner Engineer on a 10-month engagement building a regulatory-grade AWS data lake across 5 use cases, ~70 tables, with a 100+ rule data quality engine.",
+    stack: ["PySpark", "AWS Glue", "Step Functions", "Terraform"],
+    impact: "GBs of data processed across 4 data sources",
   },
   {
-    name: "E-Commerce Microservices",
-    slug: "e-commerce-microservices-architecture",
-    description: "Complete microservices ecosystem for high-traffic e-commerce platform with event-driven architecture and automated scaling.",
-    stack: ["Go", "Kubernetes", "gRPC", "MongoDB"],
-    impact: "99.99% uptime, 10x throughput improvement",
+    name: "Cloud Infrastructure — Telco Sector",
+    slug: "cloud-infrastructure-telco",
+    description: "8-month AWS infrastructure build for a major Singapore telco with multi-account organisation, Transit Gateway, EKS cluster, and centralised security stack.",
+    stack: ["AWS", "EKS", "Kubernetes", "Terraform"],
+    impact: "Multi-AZ high availability, enterprise-grade security",
   },
 ];
 
@@ -46,21 +46,21 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
             {/* Code-style label */}
-            <CodeLabel className="mb-6">Senior Developer</CodeLabel>
+            <CodeLabel className="mb-6">Cloud Architect · Data & AI</CodeLabel>
 
             {/* Headline with typing cursor */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Hi, I'm Diego Ramirez.
+              Hi, I'm Dinesh Anbalagan.
               <br />
-              <span className="text-muted-foreground">I build reliable digital systems</span>
+              <span className="text-muted-foreground">I architect cloud & AI systems</span>
               <TypingCursor />
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed opacity-0 animate-fade-in-up stagger-1">
-              A Mexico-based developer focused on building products that scale, perform, and deliver real impact. 
-              Working at the intersection of engineering, product, and design to turn 
-              complex problems into elegant solutions.
+              A Singapore-based Cloud Architect with 5 years delivering Data and AI solutions 
+              across AWS, GCP, and Azure. Bridging business problems and technical execution — 
+              from architecture to production.
             </p>
 
             {/* CTA */}
