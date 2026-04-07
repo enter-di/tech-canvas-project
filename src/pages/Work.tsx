@@ -4,32 +4,46 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 
 const projects = [
   {
-    name: "Scalable Fintech Platform",
-    slug: "scalable-fintech-platform",
-    description: "Development of a scalable financial platform designed to handle millions of transactions with real-time processing capabilities. Built with a focus on security, reliability, and performance at scale.",
-    stack: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    impact: "35% latency reduction, support for millions of users",
+    name: "GenAI LLM Platform — Multi-Agent System",
+    slug: "genai-llm-platform",
+    description: "Migrated a multi-agent platform from AWS EKS to GCP in ~2 weeks. Deployed LiteLLM proxy on GKE to orchestrate Vertex AI model endpoints, with Workload Identity Federation and GitOps-driven deployments via ArgoCD.",
+    stack: ["GCP", "GKE", "LiteLLM", "Vertex AI", "ArgoCD", "Docker"],
+    impact: "Full cloud portability proven; PoC accepted by client",
   },
   {
-    name: "Internal Design System",
-    slug: "internal-design-system",
-    description: "Creation of a comprehensive design system that enables multiple development teams to build consistent, accessible, and visually cohesive interfaces. Includes documentation, component library, and design tokens.",
-    stack: ["React", "Storybook", "CSS-in-JS", "TypeScript"],
-    impact: "40% increase in team productivity, improved visual consistency",
+    name: "GenAI Enterprise Apps — Real Estate",
+    slug: "genai-enterprise-apps",
+    description: "Lead Solution Architect for two GenAI applications — Vendor Assessment (AI-powered scoring engine) and Memo Creation (document generation for 4 memo types) — serving a major Singapore real estate client.",
+    stack: ["Azure", "Cosmos DB", "Azure OpenAI", "Entra ID", "Power Automate"],
+    impact: "Vendor evaluation reduced from ~1 week to hours",
   },
   {
-    name: "Real-Time Analytics Dashboard",
-    slug: "real-time-analytics-dashboard",
-    description: "A real-time dashboard built for instant decision-making. Features live data visualization, customizable metrics, and seamless integration with multiple data sources for product and business intelligence.",
-    stack: ["Next.js", "WebSockets", "D3.js", "Redis"],
-    impact: "Instant insights for product and business teams",
+    name: "Regulatory Data Lake & ETL Platform",
+    slug: "regulatory-data-lake",
+    description: "10-month engagement co-delivered with AWS Professional Services. Built a regulatory-grade data lake across 5 use cases, ~70 tables, with a 100+ rule data quality engine and 6 Step Functions state machines.",
+    stack: ["PySpark", "AWS Glue", "Step Functions", "Terraform", "DynamoDB"],
+    impact: "GBs of data processed daily across 4 data sources",
   },
   {
-    name: "E-Commerce Microservices Architecture",
-    slug: "e-commerce-microservices-architecture",
-    description: "Complete microservices ecosystem for a high-traffic e-commerce platform. Features event-driven architecture, automated scaling, and distributed data management for maximum reliability and performance.",
-    stack: ["Go", "Kubernetes", "gRPC", "MongoDB"],
-    impact: "99.99% uptime, 10x throughput improvement",
+    name: "Cloud Infrastructure — Telco Sector",
+    slug: "cloud-infrastructure-telco",
+    description: "8-month AWS infrastructure build for a major Singapore telco — multi-account Organisation with Transit Gateway, VPC architecture, EKS cluster, and centralised security & monitoring stack.",
+    stack: ["AWS", "EKS", "Kubernetes", "Transit Gateway", "Terraform"],
+    impact: "Multi-AZ HA, enterprise-grade security posture",
+  },
+  {
+    name: "Cloud Data Analytics — Education Sector",
+    slug: "cloud-data-analytics",
+    description: "Technical Lead on a competitive RFP win — transitioning a client from legacy on-prem systems to their first modern cloud analytics platform using Snowflake.",
+    stack: ["AWS", "Snowflake", "Terraform", "Python"],
+    impact: "Self-service BI capabilities enabled for client",
+  },
+  {
+    name: "Trailblazer GenAI Workshops — 100+ Orgs",
+    slug: "trailblazer-genai-workshops",
+    description: "Provisioned GenAI workshop environments for 100+ organisations using Terraform. Guided firms from conception to MVP, accelerating regional GenAI adoption across Singapore.",
+    stack: ["AWS", "GCP", "Terraform", "Vertex AI", "AWS Bedrock"],
+    impact: "100+ organisations onboarded to GenAI",
   },
 ];
 
@@ -44,9 +58,9 @@ export default function Work() {
               Work
             </h1>
             <p className="text-muted-foreground leading-relaxed">
-              A selection of projects showcasing systems engineering, product development, 
-              and technical problem-solving. Each project represents real challenges solved 
-              with measurable impact.
+              A selection of cloud architecture and data engineering projects delivered 
+              across Financial Services, Real Estate, Telecommunications, Education, and 
+              Government sectors in Singapore and the region.
             </p>
           </div>
 

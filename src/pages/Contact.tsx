@@ -9,9 +9,9 @@ import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub", handle: "@developer" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn", handle: "/in/developer" },
-  { href: "mailto:hello@developer.dev", icon: Mail, label: "Email", handle: "hello@developer.dev" },
+  { href: "https://github.com/enter-di", icon: Github, label: "GitHub", handle: "@enter-di" },
+  { href: "https://linkedin.com/in/enter-di", icon: Linkedin, label: "LinkedIn", handle: "/in/enter-di" },
+  { href: "mailto:dineshajh@gmail.com", icon: Mail, label: "Email", handle: "dineshajh@gmail.com" },
 ];
 
 export default function Contact() {
@@ -22,7 +22,6 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
     toast({
@@ -44,7 +43,7 @@ export default function Contact() {
               Contact
             </h1>
             <p className="text-muted-foreground leading-relaxed">
-              Have a project in mind or want to discuss opportunities? 
+              Have a cloud or data project in mind? Looking for a Cloud Architect? 
               I'm always open to interesting conversations and collaborations.
             </p>
           </div>
@@ -143,7 +142,7 @@ export default function Contact() {
                   <span className="text-primary">/*</span> Availability <span className="text-primary">*/</span>
                 </p>
                 <p className="text-sm text-foreground">
-                  Currently open to new opportunities and freelance projects.
+                  Currently open to new opportunities and collaborations.
                 </p>
               </div>
             </div>

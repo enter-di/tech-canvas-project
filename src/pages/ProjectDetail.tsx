@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
 import { TechTag } from "@/components/ui/TechTag";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projectsData: Record<string, {
@@ -13,81 +13,133 @@ const projectsData: Record<string, {
   impact: string;
   challenges: string[];
   features: string[];
+  role: string;
+  period: string;
 }> = {
-  "scalable-fintech-platform": {
-    name: "Scalable Fintech Platform",
-    description: "Development of a scalable financial platform designed to handle millions of transactions with real-time processing capabilities.",
-    fullDescription: "Built a comprehensive financial platform from the ground up, focusing on security, reliability, and performance at scale. The system processes millions of transactions daily with sub-second latency, implementing sophisticated fraud detection algorithms and real-time analytics dashboards for stakeholders.",
-    stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
-    impact: "35% latency reduction, support for millions of users",
+  "genai-llm-platform": {
+    name: "GenAI LLM Platform — Multi-Agent System",
+    description: "Multi-agent platform migration and LiteLLM proxy deployment on GCP.",
+    fullDescription: "Migrated KAI — an internal multi-agent platform — from AWS EKS to GCP in approximately 2 weeks, refactoring the React Native (EAS/Expo) mobile app and proving full cloud portability. Deployed a dedicated LiteLLM proxy cluster on GKE to orchestrate Vertex AI model endpoints (Gemini Flash, Pro, Embedding, TTS), exposing a unified external HTTPS API consumed by the Sentinel multi-agent flight intelligence application.",
+    stack: ["GCP", "GKE", "LiteLLM", "Vertex AI", "Gemini", "Workload Identity Federation", "Cloud Build", "Artifact Registry", "GitLab CI", "ArgoCD", "Docker", "React Native"],
+    impact: "Full cloud portability proven; PoC accepted with positive client feedback",
+    role: "Cloud Architect",
+    period: "2024",
     challenges: [
-      "Handling high-volume concurrent transactions without data loss",
-      "Implementing real-time fraud detection with minimal false positives",
-      "Ensuring PCI-DSS compliance across the entire stack",
-      "Scaling horizontally while maintaining data consistency"
+      "Migrating multi-agent platform across cloud providers in tight timeline",
+      "Orchestrating multiple Vertex AI model endpoints through a unified API",
+      "Eliminating API key management with Workload Identity Federation",
+      "Investigating and resolving Vertex AI billing spike post-deployment"
     ],
     features: [
-      "Real-time transaction processing engine",
-      "Multi-factor authentication system",
-      "Automated fraud detection with ML models",
-      "Comprehensive audit logging and reporting"
+      "LiteLLM proxy cluster on GKE for model orchestration",
+      "Keyless Vertex AI authentication via Workload Identity Federation",
+      "Automated container builds via Cloud Build into Artifact Registry",
+      "GitOps deployments with GitLab CI and ArgoCD"
     ]
   },
-  "internal-design-system": {
-    name: "Internal Design System",
-    description: "Creation of a comprehensive design system that enables multiple development teams to build consistent interfaces.",
-    fullDescription: "Developed and maintained a company-wide design system used by 50+ developers across multiple product teams. The system includes a complete component library, design tokens, documentation portal, and automated visual regression testing to ensure consistency across all products.",
-    stack: ["React", "Storybook", "CSS-in-JS", "TypeScript", "Figma API"],
-    impact: "40% increase in team productivity, improved visual consistency",
+  "genai-enterprise-apps": {
+    name: "GenAI Enterprise Apps — Real Estate",
+    description: "AI-powered Vendor Assessment and Memo Creation for a major Singapore real estate client.",
+    fullDescription: "Lead Solution Architect and Technical Lead for two GenAI applications serving a major Singapore real estate client's procurement and asset management operations. Vendor Assessment features an AI-powered scoring engine with dynamic weighted questionnaire logic, vendor clarification workflow, matching engine, and risk-based clause analysis. Memo Creation supports 4 memo types with dynamic approval signature logic driven by capex/opex budget thresholds.",
+    stack: ["Azure", "App Service", "Cosmos DB", "Blob Storage", "Microsoft Fabric", "Azure OpenAI", "Application Gateway", "Microsoft Entra ID", "Key Vault", "Power Automate", "Python", "React"],
+    impact: "Vendor evaluation turnaround reduced from ~1 week to hours",
+    role: "Lead Solution Architect & Technical Lead",
+    period: "2024",
     challenges: [
-      "Aligning design and engineering teams on component APIs",
-      "Maintaining backward compatibility during updates",
-      "Creating accessible components that meet WCAG 2.1 AA standards",
-      "Documenting usage patterns for diverse use cases"
+      "Designing end-to-end Azure architecture across two complex use cases",
+      "Implementing dynamic weighted questionnaire logic for vendor scoring",
+      "Building dynamic approval signature logic driven by budget thresholds",
+      "Managing scope changes and aligning stakeholders throughout delivery lifecycle"
     ],
     features: [
-      "60+ production-ready components",
-      "Automated visual regression testing",
-      "Figma-to-code synchronization",
-      "Interactive documentation with live examples"
+      "AI-powered vendor scoring engine with risk-based clause analysis",
+      "Document generation for 4 memo types (Tender Selection, Tender Waiver, 3 Quotations, Quote Waiver)",
+      "Entra External ID for vendor authentication (OAuth2/OIDC)",
+      "Formal solution architecture documents and full UAT management"
     ]
   },
-  "real-time-analytics-dashboard": {
-    name: "Real-Time Analytics Dashboard",
-    description: "A real-time dashboard built for instant decision-making with live data visualization.",
-    fullDescription: "Created a high-performance analytics dashboard that processes and visualizes millions of data points in real-time. The system features customizable widgets, alerting capabilities, and seamless integration with multiple data sources including databases, APIs, and streaming platforms.",
-    stack: ["Next.js", "WebSockets", "D3.js", "Redis", "ClickHouse"],
-    impact: "Instant insights for product and business teams",
+  "regulatory-data-lake": {
+    name: "Regulatory Data Lake & ETL Platform",
+    description: "Regulatory-grade AWS data lake for a Central Bank engagement.",
+    fullDescription: "Partner Engineer on a 10-month engagement co-delivered with AWS Professional Services, building a regulatory-grade AWS data lake across 5 use cases and 4 data sources — API submissions, on-premises credit database, regulatory financial data, ServiceNow, and SharePoint; ingesting across ~70 tables with daily, on-demand, and event-driven pipeline runs processing GBs of data.",
+    stack: ["PySpark", "AWS Glue", "DQDL", "Apache Iceberg", "Step Functions", "EventBridge", "AWS DMS", "AWS DataSync", "S3", "DynamoDB", "Redshift Spectrum", "Terraform"],
+    impact: "GBs of data processed daily across ~70 tables and 4 data sources",
+    role: "Partner Engineer",
+    period: "2023–2024",
     challenges: [
-      "Rendering large datasets without performance degradation",
-      "Implementing efficient data aggregation pipelines",
-      "Creating intuitive drag-and-drop dashboard customization",
-      "Handling network interruptions gracefully"
+      "Multi-source ingestion: DMS, DataSync, S3 event-driven, REST APIs (OAuth2)",
+      "Building 100+ rule data quality engine with dynamic DQDL ruleset generation",
+      "Orchestrating 6 Step Functions state machines — fully config-driven from DynamoDB",
+      "Ensuring no hardcoded values in pipelines for zero-code source onboarding"
     ],
     features: [
-      "Real-time data streaming with WebSocket connections",
-      "Customizable dashboard layouts and widgets",
-      "Advanced filtering and drill-down capabilities",
-      "Automated alerting and anomaly detection"
+      "4-tier medallion architecture (Staging → Raw → Curated → Redshift Spectrum)",
+      "100+ rule DQ engine with concurrent run detection and failure quarantine",
+      "Config-driven pipelines — new sources onboarded without code changes",
+      "SNS alerting, audit trails, and cross-account updates via Terraform"
     ]
   },
-  "e-commerce-microservices-architecture": {
-    name: "E-Commerce Microservices Architecture",
-    description: "Complete microservices ecosystem for a high-traffic e-commerce platform.",
-    fullDescription: "Architected and implemented a distributed microservices system handling peak traffic of 100K+ requests per minute. The platform features event-driven communication, automated scaling, circuit breakers, and comprehensive observability with distributed tracing.",
-    stack: ["Go", "Kubernetes", "gRPC", "MongoDB", "Kafka", "Prometheus"],
-    impact: "99.99% uptime, 10x throughput improvement",
+  "cloud-infrastructure-telco": {
+    name: "Cloud Infrastructure — Telco Sector",
+    description: "Enterprise AWS infrastructure build for a major Singapore telco.",
+    fullDescription: "Executed an 8-month AWS infrastructure build for a major Singapore telco, implementing a multi-account AWS Organisation with Transit Gateway, VPC architecture, Direct Connect integration, and FortiGate firewall deployment across production and non-production environments. Deployed and configured an EKS Kubernetes cluster for mobile application workloads with high availability across multiple availability zones.",
+    stack: ["AWS", "EKS", "Kubernetes", "Transit Gateway", "VPC", "GuardDuty", "SecurityHub", "CloudTrail", "CloudWatch", "Systems Manager", "Terraform", "Docker"],
+    impact: "Multi-AZ high availability, enterprise-grade security posture",
+    role: "Cloud Engineer",
+    period: "2022–2023",
     challenges: [
-      "Designing resilient inter-service communication",
-      "Implementing distributed transactions across services",
-      "Managing data consistency in eventual consistency model",
-      "Orchestrating deployments across 20+ microservices"
+      "Implementing multi-account AWS Organisation with complex networking",
+      "Deploying EKS across multiple availability zones for HA",
+      "Building centralised security and monitoring across all accounts",
+      "Automating patching with compliance reporting for enterprise standards"
     ],
     features: [
-      "Event-driven architecture with Kafka",
-      "Kubernetes-native auto-scaling",
-      "Distributed tracing with Jaeger",
-      "Comprehensive health monitoring and alerting"
+      "Multi-account Organisation with Transit Gateway and Direct Connect",
+      "EKS cluster for mobile application workloads",
+      "Centralised security stack: GuardDuty, SecurityHub, CloudTrail",
+      "Automated patching via Systems Manager with compliance reporting"
+    ]
+  },
+  "cloud-data-analytics": {
+    name: "Cloud Data Analytics — Education Sector",
+    description: "Modern cloud analytics platform using Snowflake for an education sector client.",
+    fullDescription: "Technical Lead on a competitive RFP win — transitioning a client from legacy on-prem systems to their first modern cloud analytics platform using Snowflake as the core data warehouse. Enabled advanced analytics and self-service BI capabilities for the client.",
+    stack: ["AWS", "Snowflake", "Terraform", "Python"],
+    impact: "Self-service BI capabilities enabled for client",
+    role: "Technical Lead",
+    period: "2023",
+    challenges: [
+      "Winning a competitive RFP against established vendors",
+      "Migrating from legacy on-prem to cloud-native analytics",
+      "Designing a scalable Snowflake data warehouse architecture",
+      "Enabling self-service BI for non-technical stakeholders"
+    ],
+    features: [
+      "Snowflake-based modern data warehouse",
+      "Self-service BI and advanced analytics capabilities",
+      "Infrastructure as Code with Terraform",
+      "Smooth migration from legacy on-prem systems"
+    ]
+  },
+  "trailblazer-genai-workshops": {
+    name: "Trailblazer GenAI Workshops — 100+ Orgs",
+    description: "GenAI workshop leadership accelerating regional AI adoption.",
+    fullDescription: "Provisioned GenAI workshop environments for 100+ organisations using Terraform across AWS and GCP. Guided firms as partner consultant from conception to MVP, accelerating regional GenAI adoption across Singapore. Led strategic technical engagements with Google and AWS partner teams, earning recognition as a trusted delivery consultant.",
+    stack: ["AWS", "GCP", "Terraform", "Vertex AI", "AWS Bedrock", "Azure OpenAI"],
+    impact: "100+ organisations onboarded to GenAI across 2023 & 2024",
+    role: "Partner Consultant",
+    period: "2023–2024",
+    challenges: [
+      "Provisioning scalable workshop environments for 100+ diverse organisations",
+      "Guiding non-technical firms from GenAI conception to working MVP",
+      "Coordinating strategic engagements with Google and AWS partner teams",
+      "Adapting workshop content across industries and maturity levels"
+    ],
+    features: [
+      "Terraform-provisioned GenAI environments at scale",
+      "Conception-to-MVP guidance for each organisation",
+      "Multi-cloud workshop coverage (AWS Bedrock, Vertex AI, Azure OpenAI)",
+      "Recognition as trusted delivery consultant by cloud partners"
     ]
   }
 };
@@ -135,6 +187,14 @@ export default function ProjectDetail() {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {project.name}
             </h1>
+
+            {/* Role & Period */}
+            <div className="flex flex-wrap gap-4 mb-4 font-mono text-sm">
+              <span className="text-primary">{project.role}</span>
+              <span className="text-muted-foreground">·</span>
+              <span className="text-muted-foreground">{project.period}</span>
+            </div>
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {project.fullDescription}
             </p>
@@ -171,7 +231,7 @@ export default function ProjectDetail() {
           </div>
 
           <div className="opacity-0 animate-fade-in-up stagger-3">
-            <CodeDivider label="Features" />
+            <CodeDivider label="Key Deliverables" />
           </div>
 
           {/* Features */}
@@ -184,18 +244,6 @@ export default function ProjectDetail() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
-            <Button variant="outline" className="font-mono" disabled>
-              <Github className="mr-2 h-4 w-4" />
-              View Code
-            </Button>
-            <Button variant="outline" className="font-mono" disabled>
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
           </div>
         </div>
       </section>
